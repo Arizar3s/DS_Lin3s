@@ -1,0 +1,112 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2020-04-20 11:22:47",
+    "containerVersion": {
+        "path": "accounts/6000166774/containers/31154107/versions/1",
+        "accountId": "6000166774",
+        "containerId": "31154107",
+        "containerVersionId": "1",
+        "name": "Valores ga",
+        "container": {
+            "path": "accounts/6000166774/containers/31154107",
+            "accountId": "6000166774",
+            "containerId": "31154107",
+            "name": "Hits",
+            "publicId": "GTM-P2X3NMT",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1587381564238",
+            "tagManagerUrl": "https://tagmanager.google.com//#/container/accounts/6000166774/containers/31154107/workspaces?apiLink=container"
+        },
+        "variable": [
+            {
+                "accountId": "6000166774",
+                "containerId": "31154107",
+                "variableId": "3",
+                "name": "Hit Timestamp",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n    // Get local time as ISO string with offset at the end\n    var now = new Date();\n    var tzo = -now.getTimezoneOffset();\n    var dif = tzo >= 0 ? '+' : '-';\n    var pad = function(num) {\n        var norm = Math.abs(Math.floor(num));\n        return (norm < 10 ? '0' : '') + norm;\n    };\n    return now.getFullYear() \n        + '-' + pad(now.getMonth()+1)\n        + '-' + pad(now.getDate())\n        + 'T' + pad(now.getHours())\n        + ':' + pad(now.getMinutes()) \n        + ':' + pad(now.getSeconds())\n        + '.' + pad(now.getMilliseconds())\n        + dif + pad(tzo / 60) \n        + ':' + pad(tzo % 60);\n}"
+                    }
+                ],
+                "fingerprint": "1587381728394",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000166774",
+                "containerId": "31154107",
+                "variableId": "4",
+                "name": "Session ID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () { // Public Domain/MIT\n    var d = new Date().getTime();\n    if (typeof performance !== 'undefined' && typeof performance.now === 'function'){\n        d += performance.now(); //use high-precision timer if available\n    }\n    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {\n        var r = (d + Math.random() * 16) % 16 | 0;\n        d = Math.floor(d / 16);\n        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);\n    });\n}"
+                    }
+                ],
+                "fingerprint": "1587381728394",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000166774",
+                "containerId": "31154107",
+                "variableId": "5",
+                "name": "Cookie _ga",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "_ga"
+                    }
+                ],
+                "fingerprint": "1587381746483",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6000166774",
+                "containerId": "31154107",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6000166774",
+                "containerId": "31154107",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6000166774",
+                "containerId": "31154107",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6000166774",
+                "containerId": "31154107",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6000166774",
+                "containerId": "31154107",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1587381757037",
+        "tagManagerUrl": "https://tagmanager.google.com//#/versions/accounts/6000166774/containers/31154107/versions/1?apiLink=version"
+    }
+}
